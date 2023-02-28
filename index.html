@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ <meta name="Author" content="Made by 'tree'">
+ <meta name="GENERATOR" content="$Version: $ tree v1.8.0 (c) 1996 - 2018 by Steve Baker, Thomas Moore, Francesc Rocher, Florian Sesser, Kyosuke Tokoro $">
+ <title>Digital Signal Processing</title>
+ <style type="text/css">
+  <!-- 
+  BODY { font-family : ariel, monospace, sans-serif; }
+  P { font-weight: normal; font-family : ariel, monospace, sans-serif; color: black; background-color: transparent;}
+  B { font-weight: normal; color: black; background-color: transparent;}
+  A:visited { font-weight : normal; text-decoration : none; background-color : transparent; margin : 0px 0px 0px 0px; padding : 0px 0px 0px 0px; display: inline; }
+  A:link    { font-weight : normal; text-decoration : none; margin : 0px 0px 0px 0px; padding : 0px 0px 0px 0px; display: inline; }
+  A:hover   { color : #000000; font-weight : normal; text-decoration : underline; background-color : yellow; margin : 0px 0px 0px 0px; padding : 0px 0px 0px 0px; display: inline; }
+  A:active  { color : #000000; font-weight: normal; background-color : transparent; margin : 0px 0px 0px 0px; padding : 0px 0px 0px 0px; display: inline; }
+  .VERSION { font-size: small; font-family : arial, sans-serif; }
+  .NORM  { color: black;  background-color: transparent;}
+  .FIFO  { color: purple; background-color: transparent;}
+  .CHAR  { color: yellow; background-color: transparent;}
+  .DIR   { color: blue;   background-color: transparent;}
+  .BLOCK { color: yellow; background-color: transparent;}
+  .LINK  { color: aqua;   background-color: transparent;}
+  .SOCK  { color: fuchsia;background-color: transparent;}
+  .EXEC  { color: green;  background-color: transparent;}
+  -->
+ </style>
+</head>
+<body>
+	<h1>Digital Signal Processing</h1><p>
+	<a class="NORM" href="./">./</a><br>
+	├── <a class="DIR" href="./01.Introduction/">01. Introduction to Digital Signal Processing</a><br>
+	│   ├── <a class="NORM" href="./01.Introduction/introduction-3nup.pdf">Introduction to Digital Signal Processing - Slides (with gaps for own notes)</a><br>
+	│   └── <a class="NORM" href="./01.Introduction/introduction-notes.pdf">Introduction to Digital Signal Processing - Typed Notes</a><br>
+	├── <a class="DIR" href="./02.LinearTimeInvariantSystems/">02. Linear Time Invariant (LTI) Systems</a><br>
+	│   ├── <a class="NORM" href="./02.LinearTimeInvariantSystems/LTICsystems-notes.pdf">LTICsystems - Typed Notes</a><br>
+	│   ├── <a class="NORM" href="./02.LinearTimeInvariantSystems/ltisystems-3nup.pdf">LTI Systems - Slides (with gaps for own notes)</a><br>
+	│   ├── <a class="NORM" href="./02.LinearTimeInvariantSystems/questions-LTICsystems.pdf">Tutorial Questions - LTI Systems</a><br>
+	│   └── <a class="NORM" href="./02.LinearTimeInvariantSystems/solutions-LTICsystems.pdf">Tutorial Question Solutions - LTI Systems</a><br>
+	├── <a class="DIR" href="./03.FourierSeries/">03. Introduction to Discrete Fourier Analysis</a><br>
+	│   ├── <a class="NORM" href="./03.FourierSeries/fourier-3nup.pdf">Introduction to Discrete Fourier Analysis - Slides (with gaps for own notes)</a><br>
+	│   ├── <a class="NORM" href="./03.FourierSeries/fourier-notes.pdf">Introduction to Discrete Fourier Analysis - Typed Notes</a><br>
+	│   ├── <a class="NORM" href="./03.FourierSeries/questions-fourierseries.pdf">Tutorial Questions - Introduction to Discrete Fourier Analysis</a><br>
+	│   └── <a class="NORM" href="./03.FourierSeries/solutions-fourierseries.pdf">Tutorial Question Solutions - Introduction to Discrete Fourier Analysis</a><br>
+	├── <a class="DIR" href="./04.FastFourierTransform/">04. The Fast Fourier Transform (FFT)</a><br>
+	│   ├── <a class="NORM" href="./04.FastFourierTransform/fft-3nup.pdf">FFT - Slides (with gaps for own notes)</a><br>
+	│   ├── <a class="NORM" href="./04.FastFourierTransform/fft-notes.pdf">FFT - Typed Notes</a><br>
+	│   ├── <a class="NORM" href="./04.FastFourierTransform/questions-fft.pdf">Tutorial Questions - FFT</a><br>
+	│   └── <a class="NORM" href="./04.FastFourierTransform/solutions-fft.pdf">Tutorial Question Solutions - FFT</a><br>
+	├── <a class="DIR" href="./05.ZTransforms/">05. z-Transforms</a><br>
+	│   ├── <a class="NORM" href="./05.ZTransforms/questions-ztransforms.pdf">Tutorial Questions - z-Transforms</a><br>
+	│   ├── <a class="NORM" href="./05.ZTransforms/solutions-ztransforms.pdf">Tutorial Question Solutions - z-Transforms</a><br>
+	│   ├── <a class="NORM" href="./05.ZTransforms/ztransforms-3nup.pdf">z-Transforms - Slides (with gaps for own notes)</a><br>
+	│   └── <a class="NORM" href="./05.ZTransforms/ztransforms-notes.pdf">z-Transforms - Typed Notes</a><br>
+	├── <a class="DIR" href="./06.FIRFilters/">06. Finite Impulse Response (FIR) Filters</a><br>
+	│   ├── <a class="NORM" href="./06.FIRFilters/firfilters-3nup.pdf">FIR Filters - Slides (with gaps for own notes)</a><br>
+	│   ├── <a class="NORM" href="./06.FIRFilters/firfilters-notes.pdf">FIR Filters - Typed Notes</a><br>
+	│   ├── <a class="NORM" href="./06.FIRFilters/oversamplingaudiodac-3nup.pdf">Designing Oversampling Audio DAC - Slides (with gaps for own notes)</a><br>
+	│   ├── <a class="NORM" href="./06.FIRFilters/questions-firdigfilters.pdf">Tutorial Questions - FIR digital Filters</a><br>
+	│   ├── <a class="NORM" href="./06.FIRFilters/questions-introfir.pdf">Tutorial Questions - Introduction to FIR Filters</a><br>
+	│   ├── <a class="NORM" href="./06.FIRFilters/solutions-firdigfilters.pdf">Tutorial Question Solutions - FIR digital Filters</a><br>
+	│   └── <a class="NORM" href="./06.FIRFilters/solutions-introfir.pdf">Tutorial Question Solutions - Introduction to FIR Filters</a><br>
+	├── <a class="DIR" href="./07.Windowing/">07. Windowing</a><br>
+	│   ├── <a class="NORM" href="./07.Windowing/questions-windowing.pdf">Tutorial Questions - Windowing</a><br>
+	│   ├── <a class="NORM" href="./07.Windowing/solutions-windowing.pdf">Tutorial Question Solutions - Windowing</a><br>
+	│   ├── <a class="NORM" href="./07.Windowing/windowing-3nup.pdf">Windowing - Slides (with gaps for own notes)</a><br>
+	│   └── <a class="NORM" href="./07.Windowing/windowing-notes.pdf">Windowing - Typed Notes</a><br>
+	├── <a class="DIR" href="./08.SampledSignals/">08. Sampled Signals - Digisation in More Detail</a><br>
+	│   ├── <a class="NORM" href="./08.SampledSignals/questions-sampledsignals.pdf">Tutorial Questions - Sampled Signals</a><br>
+	│   ├── <a class="NORM" href="./08.SampledSignals/sampledsignals-3nup.pdf">Sampled Signals - Slides (with gaps for own notes)</a><br>
+	│   ├── <a class="NORM" href="./08.SampledSignals/signalsampling-notes.pdf">Sampled Signals - Typed Notes</a><br>
+	│   └── <a class="NORM" href="./08.SampledSignals/solutions-sampledsignals.pdf">Tutorial Question Solutions - Sampled Signals</a><br>
+	├── <a class="DIR" href="./09.IIRFilters/">09. Infinite Impulse Response (IIR) Filters</a><br>
+	│   ├── <a class="NORM" href="./09.IIRFilters/desnotchfilter-3nup.pdf">Designing a Notch Filter - Slides (with gaps for own notes)</a><br>
+	│   ├── <a class="NORM" href="./09.IIRFilters/filters-notes.pdf">Filters - Typed Notes</a><br>
+	│   ├── <a class="NORM" href="./09.IIRFilters/filterstructures-3nup.pdf">Filter Structures - Slides (with gaps for own notes)</a><br>
+	│   ├── <a class="NORM" href="./09.IIRFilters/iirfilters-3nup.pdf">IIR Filters - Slides (with gaps for own notes)</a><br>
+	│   ├── <a class="NORM" href="./09.IIRFilters/questions-introiir.pdf">Tutorial Questions - Introduction to IIR Filters</a><br>
+	│   ├── <a class="NORM" href="./09.IIRFilters/questions-recurdigfilters.pdf">Tutorial Questions - Recursive Digital Filters</a><br>
+	│   ├── <a class="NORM" href="./09.IIRFilters/solutions-introiir.pdf">Tutorial Question Solutions - Introduction to IIR Filters</a><br>
+	│   └── <a class="NORM" href="./09.IIRFilters/solutions-recurdigfilters.pdf">Tutorial Question Solutions - Recursive Digital Filters</a><br>
+	├── <a class="DIR" href="./10.MultirateSignalProcessing/">10. Multirate Digital Signal Processing</a><br>
+	│   └── <a class="NORM" href="./10.MultirateSignalProcessing/multirate-3nup.pdf">Multirate Digital Signal Processing - Slides (with gaps for own notes)</a><br>
+	├── <a class="DIR" href="./11.AdaptiveSignalProcessing/">11. Adaptive Digital Signal Processing</a><br>
+	│   └── <a class="NORM" href="./11.AdaptiveSignalProcessing/adaptive-3nup.pdf">Adaptive Digital Signal Processing - Slides (with gaps for own notes)</a><br>
+	└── <a class="DIR" href="./12.SpectrumAnalysis/">12. Digital Spectrum Analysis</a><br>
+	&nbsp;&nbsp;&nbsp; ├── <a class="NORM" href="./12.SpectrumAnalysis/designAudioSA-notes.pdf">Designing an Audio Spectrum Analyser - Typed Notes</a><br>
+	&nbsp;&nbsp;&nbsp; └── <a class="NORM" href="./12.SpectrumAnalysis/spectrumanalyser-3nup.pdf">Designing an Audio Spectrum Analyser - Slides (with gaps for own notes)</a><br>
+	<br><br>
+	</p>
+	<p>
+	<br><br>
+	</p>
+	<hr>
+	<p class="VERSION">
+		 
+		 
+		 
+		 
+	</p>
+</body>
+</html>
